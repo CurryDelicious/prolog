@@ -1,14 +1,14 @@
 body{
-    margin: 2px 0px;
+    margin: 0px;
 }
 
 header{
     color:#8b4513;
     font-family: serif;
     background-color:#fff8dc;
-    font-size:20px;
-    padding: 2px 7px;
-    margin:0px 20px;
+    font-size: 20px;
+    padding: 2px 20px;
+    margin:0px;
     border: 5px solid #8b4513;
 }
 
@@ -17,19 +17,83 @@ header h1{
 }
 
 .photo{
-    margin: 0px 20px;
+    margin: 0px;
+}
+
+/*リンクの形状*/
+#page-top a{
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	background:#b8860b;
+	border-radius: 5px;
+	width: 60px;
+	height: 60px;
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase; 
+	text-decoration: none;
+	font-size:0.6rem;
+	transition:all 0.3s;
+}
+
+#page-top a:hover{
+	background: #777;
+}
+
+/*リンクを右下に固定*/
+#page-top {
+	position: fixed;
+	right: 10px;
+	bottom:10px;
+	z-index: 2;
+    /*はじめは非表示*/
+	opacity: 0;
+	transform: translateY(100px);
+}
+
+/*　上に上がる動き　*/
+
+#page-top.UpMove{
+	animation: UpAnime 0.5s forwards;
+}
+@keyframes UpAnime{
+  from {
+    opacity: 0;
+	transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+	transform: translateY(0);
+  }
+}
+
+/*　下に下がる動き　*/
+
+#page-top.DownMove{
+	animation: DownAnime 0.5s forwards;
+}
+@keyframes DownAnime{
+  from {
+  	opacity: 1;
+	transform: translateY(0);
+  }
+  to {
+  	opacity: 1;
+	transform: translateY(100px);
+  }
 }
 
 .main{
     background-color: #ffffe5;
-    padding: 2px 7px;
-    margin: 0px 20px;
+    padding: 2px 20px;
+    margin: 0px;
     font-family:serif;
     color: #6d350e;
 }
 
 .main h1{
-    margin:0px;
+    margin: 0px;
     text-align: center;
 }
 
@@ -37,8 +101,8 @@ header h1{
 footer{
     background-color: #8b4513;
     color: #fff8dc;
-    margin: 0px 20px;
-    padding: 2px 2px; 
+    margin: 0px;
+    padding: 2px 20px; 
     font-family: serif;
     text-align: center;
 }
@@ -46,3 +110,8 @@ footer{
 footer p{
     margin:0px;
 }
+
+a { color:#6d350e; 
+  transition:all 0.5s ease-in; 
+}
+a:hover { text-decoration: underline; }
